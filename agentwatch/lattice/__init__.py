@@ -11,6 +11,12 @@ from agentwatch.lattice.shadow_filesystem import (
     ShadowFilesystem,
 )
 
+from agentwatch.lattice.miscalibration import (
+    CalibrationEntry,
+    MiscalibrationDetector,
+    MiscalibrationResult,
+)
+
 __all__ = [
     "CRITICAL_SYSTEM_PATHS",
     "FileAction",
@@ -18,4 +24,7 @@ __all__ = [
     "MutationResult",
     "MutationType",
     "ShadowFilesystem",
+    "CalibrationEntry",
+    "MiscalibrationDetector",
+    "MiscalibrationResult",
 ]
