@@ -16,11 +16,8 @@ from agentwatch.lattice.shadow_filesystem import (
     ShadowFilesystem,
 )
 
-from agentwatch.lattice.miscalibration import (
-    CalibrationEntry,
-    MiscalibrationDetector,
-    MiscalibrationResult,
-)
+from agentwatch.lattice.miscalibration import *
+
 
 __all__ = [
     "AttentionScatterDetector",
