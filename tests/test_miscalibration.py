@@ -40,6 +40,20 @@ def test_invalid_confidence_raises_value_error():
         detector.record(-0.1, False)
 
 
+def test_invalid_thresholds_raise_value_error():
+    with pytest.raises(ValueError):
+        MiscalibrationDetector(warning_threshold=-0.1)
+
+    with pytest.raises(ValueError):
+        MiscalibrationDetector(blocking_threshold=1.1)
+
+    with pytest.raises(ValueError):
+        MiscalibrationDetector(
+            warning_threshold=0.3,
+            blocking_threshold=0.2,
+        )
+
+
 def test_good_calibration_does_not_trigger_warning():
     detector = MiscalibrationDetector()
 
