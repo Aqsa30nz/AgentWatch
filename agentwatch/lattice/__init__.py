@@ -2,6 +2,11 @@
 
 from __future__ import annotations
 
+from agentwatch.lattice.attention_scatter import (
+    AttentionScatterDetector,
+    AttentionScatterReport,
+    compute_scatter_score,
+)
 from agentwatch.lattice.shadow_filesystem import (
     CRITICAL_SYSTEM_PATHS,
     FileAction,
@@ -18,6 +23,8 @@ from agentwatch.lattice.miscalibration import (
 )
 
 __all__ = [
+    "AttentionScatterDetector",
+    "AttentionScatterReport",
     "CRITICAL_SYSTEM_PATHS",
     "FileAction",
     "FileOperation",
@@ -27,4 +34,5 @@ __all__ = [
     "CalibrationEntry",
     "MiscalibrationDetector",
     "MiscalibrationResult",
+    "compute_scatter_score",
 ]
