@@ -40,6 +40,13 @@ class MiscalibrationDetector:
     blocking_threshold: float = 0.25
     history: list[CalibrationEntry] = field(default_factory=list)
 
+    def __post_init__(self) -> None:
+        if not 0.0 <= self.warning_threshold <= self.blocking_threshold <= 1.0:
+            raise ValueError(
+                "thresholds must satisfy "
+                "0.0 <= warning_threshold <= blocking_threshold <= 1.0"
+            )
+
     def record(self, confidence: float, success: bool) -> None:
         """Record one prediction and its observed outcome."""
 
